@@ -1,0 +1,21 @@
+﻿@model List<SimpleEcommerce.BL.Models.ProductViewModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row js-product">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 product">
+            <div class="product__img-container">
+                <img class="product__img" src="@item.ImageUrl" alt="@item.Name" />
+            </div>
+            <h2 class="product__name">@item.Name</h2>
+            <button type="button" class="btn js-add-to-cart" data-id="@item.ID">Add to cart</button>
+        </div>
+    }
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</div>
