@@ -9,15 +9,11 @@
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="">
-           
-
-                @Html.ActionLink("Simple Ecommerce", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-         
+        <div class="navbar__content">
+            @Html.ActionLink("Simple Ecommerce", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <div class="js-cart">
                 @Html.Action("Get", "Cart")
             </div>
-
         </div>
     </div>
     <div class="container body-content">

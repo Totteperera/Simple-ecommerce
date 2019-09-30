@@ -1,8 +1,4 @@
-﻿using AutoMapper;
-using SimpleEcommerce.DAL.Models;
-using System;
-
-namespace SimpleEcommerce.BL.Models
+﻿namespace SimpleEcommerce.BL.Models
 {
     public class ProductViewModel
     {

@@ -1,4 +1,6 @@
-﻿using SimpleEcommerce.DAL;
+﻿using SimpleEcommerce.BL.Mappers;
+using SimpleEcommerce.BL.Models;
+using SimpleEcommerce.DAL;
 using SimpleEcommerce.DAL.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,15 @@ namespace SimpleEcommerce.BL.Services
             using(var db = new SimpleEcommerceContext())
             {
                 return db.Products.FirstOrDefault(x => x.ID.Equals(id));
+            }
+        }
+
+        public List<ProductViewModel> GetAll()
+        {
+            using (var db = new SimpleEcommerceContext())
+            {
+                var products = db.Products.ToList();
+                return products.Select(x => x.Map()).ToList();
             }
         }
     }
