@@ -1,0 +1,24 @@
+﻿.order {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+.order__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order__row--bold {
+    font-weight: bold;
+}
+
+.order__column {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+
+.order__total {
+    text-align: end;
+    margin-top: 50px;
+}

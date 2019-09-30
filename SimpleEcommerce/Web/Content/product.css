@@ -1,0 +1,39 @@
+﻿.product {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+}
+
+.product__img-container {
+    display: flex;
+    justify-content: center;
+}
+
+.product__img {
+    max-height: 300px;
+}
+
+.product__name {
+    text-align: center;
+}
+
+.product__information-container {
+    padding: 0 40px;
+}
+
+.product__information {
+    padding: 0;
+}
+
+.product__information-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product__information-item--bold {
+    font-weight: bold;
+}
+
+.product__button {
+    margin: 0 40px;
+}

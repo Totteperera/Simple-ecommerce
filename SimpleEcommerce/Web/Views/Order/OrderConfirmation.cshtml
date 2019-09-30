@@ -1,0 +1,37 @@
+﻿@model SimpleEcommerce.BL.Models.OrderViewModel
+@{
+    ViewBag.Title = "OrderConfirmation";
+}
+
+<h2>Tack för din order</h2>
+
+
+<div class="order">
+    <ul>
+        <li class="order__row order__row--bold">
+            <span class="order__column">Namn</span>
+            <span class="order__column">Märke</span>
+            <span class="order__column">Artikelnummer</span>
+            <span class="order__column">Antal</span>
+            <span class="order__column">Pris</span>
+            <span class="order__column">Totalt</span>
+        </li>
+    </ul>
+    <ul>
+        @foreach(var item in Model.OrderRows)
+        {
+            <li class="order__row">
+                <span class="order__column">@item.Product.Name</span>
+                <span class="order__column">@item.Product.Brand</span>
+                <span class="order__column">@item.Product.ArticleNumber</span>
+                <span class="order__column">@item.Quantity</span>
+                <span class="order__column">@item.Product.Price kr</span>
+                <span class="order__column">@(item.Quantity*item.Product.Price) kr</span>
+            </li>
+        }
+    </ul>
+</div>
+
+<h2 class="order__total">Totalt: @Model.TotalPrice kr</h2>
+
+
