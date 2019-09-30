@@ -1,6 +1,13 @@
 # Simple-ecommerce
 
-Ecommerce selling deodorants. Contains, list of products, add-to-cart, and place order.
+Ecommerce selling deodorants. On this simple ecommerce you can do the following:
+- Listing Products with information.
+- Adding products to cart.
+- Place order
+
+# Get started
+
+Clone Project and run iisexpress. Project is using localdb.
 
 # Solution
 
@@ -11,11 +18,6 @@ Models:
 - Cart
 - Order
 - OrderRow
-
-Relations: 
-- Product to OrderRow: One to many
-- Order to OrderRow: One to many
-- Cart to OrderRow: One to many
 
 ```
 public class Product
@@ -55,9 +57,9 @@ public class Order
 public class OrderRow
 {
     public int ID { get; set; }
-    public int OrderID { get; set; }
+    public int? OrderID { get; set; }
     public int ProductID { get; set; }
-    public int CartID { get; set; }
+    public int? CartID { get; set; }
     public int Quantity { get; set; }
 
     public virtual Order Order { get; set; }
@@ -70,4 +72,6 @@ public class OrderRow
 # Improvements
 - Include IoC container
 - Use automapper
+- No time spent on shapes and colors
+- Create better error handling.
 
