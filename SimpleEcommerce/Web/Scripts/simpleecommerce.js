@@ -5,6 +5,18 @@
             var productId = $(this).data('id');
             var form = $('#__AjaxAntiForgeryForm');
             var token = $('input[name="__RequestVerificationToken"]', form).val();
+            var url = $(this).data('url');
 
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    __RequestVerificationToken: token,
+                    id: productId
+                },
+                success: function (result) {
+                    console.log(result);
+                }
+            });
         });
 });

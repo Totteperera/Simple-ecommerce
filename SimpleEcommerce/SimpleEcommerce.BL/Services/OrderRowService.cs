@@ -23,8 +23,8 @@ namespace SimpleEcommerce.BL.Services
         {
             using (var db = new SimpleEcommerceContext())
             {
-                var persistedOrderRow = db.OrderRows.Find(orderRow);
-                persistedOrderRow.Quantity++;
+                var orderRowPersisted = db.OrderRows.FirstOrDefault(x => x.ID.Equals(orderRow.ID));
+                orderRowPersisted.Quantity++;
                 db.SaveChanges();
             }
         }
@@ -33,7 +33,7 @@ namespace SimpleEcommerce.BL.Services
         {
             using (var db = new SimpleEcommerceContext())
             {
-                return db.OrderRows.Where(x => x.CartID.Equals(id)).ToList();
+                return db.OrderRows.Where(x => x.CartID.Value.Equals(id)).ToList();
             }
         }
     }

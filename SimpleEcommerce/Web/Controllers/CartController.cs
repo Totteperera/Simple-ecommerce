@@ -54,8 +54,8 @@ namespace Web.Controllers
             {
                 orderRow = new OrderRow
                 {
-                    Cart = cart,
-                    Product = product,
+                    CartID = cart.ID,
+                    ProductID = product.ID,
                     Quantity = 1
                 };
                 _orderRowService.Create(orderRow);
