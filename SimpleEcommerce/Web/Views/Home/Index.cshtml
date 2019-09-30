@@ -11,7 +11,23 @@
                 <img class="product__img" src="@item.ImageUrl" alt="@item.Name" />
             </div>
             <h2 class="product__name">@item.Name</h2>
-            <button type="button" class="btn js-add-to-cart" data-id="@item.ID" data-url="@Url.Action("Add","Cart")">Add to cart</button>
+            <div class="product__information-container">
+                <ul class="product__information">
+                    <li class="product__information-item">
+                        <span class="product__information-item--bold">Märke:</span>
+                        <span>@item.Brand</span>
+                    </li>
+                    <li class="product__information-item">
+                        <span class="product__information-item--bold">Art.no:</span>
+                        <span>@item.ArticleNumber</span>
+                    </li>
+                    <li class="product__information-item">
+                        <span class="product__information-item--bold">Pris:</span>
+                        <span>@item.Price kr</span>
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="btn product__button js-add-to-cart" data-id="@item.ID" data-url="@Url.Action("Add","Cart")">Add to cart</button>
         </div>
     }
     @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))

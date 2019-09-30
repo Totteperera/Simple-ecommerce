@@ -64,8 +64,17 @@ namespace Web.Controllers
             {
                 _orderRowService.AddOne(orderRow);
             }
-            
-            return new HttpStatusCodeResult(HttpStatusCode.OK);
+            var viewModel = _cartService.GetViewModel(cartSessionId);
+            return PartialView("_cart", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Get()
+        {
+            var cartSessionId = GetCartCookieSessionId();
+            var viewModel = _cartService.GetViewModel(cartSessionId);
+
+            return PartialView("_cart", viewModel);
         }
 
         private Guid GetCartCookieSessionId()

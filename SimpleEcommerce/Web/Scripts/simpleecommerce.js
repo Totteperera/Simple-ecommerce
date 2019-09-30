@@ -14,9 +14,16 @@
                     __RequestVerificationToken: token,
                     id: productId
                 },
-                success: function (result) {
-                    console.log(result);
+                success: function (html) {
+                    $('.js-cart').html(html);
                 }
             });
         });
+
+    $('.js-cart')
+        .off('')
+        .on('click', '.js-cart-icon', function () {
+            $('.js-cart').find('.js-cart-information').toggleClass('open');
+        });
 });
+

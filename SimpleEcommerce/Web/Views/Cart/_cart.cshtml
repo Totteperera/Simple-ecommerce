@@ -1,0 +1,15 @@
+﻿@model SimpleEcommerce.BL.Models.Cart.CartViewModel
+    <div class="cart">
+        <span class="glyphicon glyphicon-shopping-cart cart__icon js-cart-icon"></span>
+        <span class="cart__quantity">@Model.NumberOfRows</span>
+
+        <div class="cart__information-container js-cart-information">
+            <span class="cart__price">@Model.TotalPrice kr</span>
+            @using (Html.BeginForm("PlaceOrder", "Order", FormMethod.Post, new { id = "PlaceOrder" }))
+            {
+                @Html.AntiForgeryToken()
+                <button type="submit" class="cart__button">Placera order</button>
+            }
+        </div>
+
+    </div>

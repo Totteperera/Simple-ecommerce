@@ -26,7 +26,9 @@ namespace Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
-                      "~/Content/product.css"));
+                      "~/Content/product.css",
+                      "~/Content/cart.css",
+                      "~/Content/order.css"));
         }
     }
 }

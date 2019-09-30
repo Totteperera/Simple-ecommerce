@@ -55,11 +55,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\SimpleEcommerceConstants.cs" />
+    <Compile Include="Mappers\CartMapper.cs" />
+    <Compile Include="Mappers\OrderMapper.cs" />
+    <Compile Include="Mappers\OrderRowMapper.cs" />
     <Compile Include="Mappers\ProductMapper.cs" />
+    <Compile Include="Models\Cart\CartViewModel.cs" />
+    <Compile Include="Models\OrderRowViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CartService.cs" />
     <Compile Include="Services\OrderRowService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\ProductService.cs" />
   </ItemGroup>
   <ItemGroup>
