@@ -16,6 +16,7 @@ namespace SimpleEcommerce.BL.Services
         {
             using(var db = new SimpleEcommerceContext())
             {
+                order.CreatedAt = DateTime.Now;
                 db.Orders.Add(order);
                 db.SaveChanges();
             }
@@ -34,6 +35,7 @@ namespace SimpleEcommerce.BL.Services
             using (var db = new SimpleEcommerceContext())
             {
                 return db.Orders.FirstOrDefault(x => x.ID == id).Map();
+
             }
         }
     }

@@ -13,7 +13,6 @@ namespace SimpleEcommerce.DAL.Mapper
         {
             return new Order
             {
-                CreatedAt = DateTime.UtcNow,
                 OrderRows = cart.OrderRows
             };
         }
